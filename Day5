@@ -1,0 +1,19 @@
+class Solution(object):
+    def reverseVowels(self, s):
+        vowels=[]
+        pos=[]
+        for i in range(len(s)):
+            if s[i] in "aeiouAEIOU":
+               vowels.append(s[i])
+               pos.append(i)
+
+        
+            rev=(vowels[::-1])
+
+        s=list(s)
+        for i in range(len(pos)):
+            s[pos[i]]=rev[i]
+
+        return "".join(s)
+
+        
