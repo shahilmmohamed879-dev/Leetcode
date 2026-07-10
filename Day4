@@ -1,0 +1,20 @@
+class Solution(object):
+    def canPlaceFlowers(self, flowerbed, n):
+        length = len(flowerbed)
+
+        count = 0
+
+        for i in range(length):
+            left = right = 0
+
+            if i > 0:
+                left = flowerbed[i - 1]
+
+            if i < length - 1:
+                right = flowerbed[i + 1]
+
+            if flowerbed[i] == 0:
+                if left == 0 and right == 0:
+                    flowerbed[i] = 1
+                    count += 1
+        return count>=n
