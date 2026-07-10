@@ -1,0 +1,21 @@
+class Solution(object):
+    def reverseWords(self, s):
+        words = []
+        temp = ""
+
+        for ch in s:
+            if ch != " ":
+                temp += ch
+            else:
+                if temp != "":
+                    words.append(temp)
+                    temp = ""
+
+        if temp != "":
+            words.append(temp)
+
+        rev = words[::-1]
+        result = " ".join(rev)
+
+        return result
+        
